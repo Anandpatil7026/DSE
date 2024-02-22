@@ -49,6 +49,12 @@ print("predication for test set:{}".format(y_pred_slr))
 slr_diff=pd.DataFrame({'Actual value':y_test,'Predicated Value':y_pred_slr})
 slr_diff
 
+meanAbErr=metrics.mean_absolute_error(y_test,y_pred_slr)
+meanSqErr=metrics.mean_squared_error(y_test,y_pred_slr)
+rootMeanSqErr=np.sqrt(metrics.mean_squared_error(y_test,y_pred_slr))
+print('mean absolute error',meanAbErr)
+print('mean square error',meanSqErr)
+print('root mean square error',rootMeanSqErr)
 slr.predict([[56]])
 
 from sklearn.metrics import accuracy_score
